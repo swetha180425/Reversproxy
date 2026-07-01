@@ -1,0 +1,20 @@
+services:
+  bus_booking:
+    image: shaikmustafa/paytm:bus
+    ports:
+      - "1111:80"
+    deploy:
+      replicas: 2
+  movie_booking:
+    image: shaikmustafa/paytm:movie
+    ports:
+      - "2222:80"
+    deploy:
+      replicas: 2
+  bank_booking:
+    image: shaikmustafa/paytm:bank
+    ports:
+      - "3333:80"
+    deploy:
+      replicas: 2
+
