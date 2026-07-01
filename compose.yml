@@ -1,20 +1,20 @@
 services:
-  bus_booking:
-    image: shaikmustafa/paytm:bus
+  food:
+    container_name: cont1
+    build: ./food
     ports:
-      - "1111:80"
-    deploy:
-      replicas: 2
-  movie_booking:
-    image: shaikmustafa/paytm:movie
+      - "5001:80"
+  instamart:
+    container_name: cont2
+    build: ./instamart
     ports:
-      - "2222:80"
-    deploy:
-      replicas: 2
-  bank_booking:
-    image: shaikmustafa/paytm:bank
+      - "5002:80"
+  reverse:
+    container_name: mycont
+    build: ./
     ports:
-      - "3333:80"
-    deploy:
-      replicas: 2
+      - "5000:80"
+    depends_on:
+      - food
+      - instamart
 
